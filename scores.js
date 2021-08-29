@@ -467,6 +467,48 @@ const scoreInfo = {
     "score": "51.85",
     "link": "https://www.youtube.com/watch?v=mh5GrazRb4Y",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Ryan_Murphy_poses_after_winning_200_back_-_vertical_%2842052325364%29.jpg/240px-Ryan_Murphy_poses_after_winning_200_back_-_vertical_%2842052325364%29.jpg"
+  },
+  "100freestyle,1976": {
+    "name": "Jonty Skinner",
+    "date": "08/14/1976",
+    "score": "49.44",
+    "link": "https://www.youtube.com/watch?v=Ig4dJiVNxVs",
+    "image": ""
+  },
+  "200backstroke,1976": {
+    "name": "John Naber",
+    "date": "07/24/1976",
+    "score": "1:59.19",
+    "link": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/John_Naber_2016.jpg/240px-John_Naber_2016.jpg"
+  },
+  "200m,2012": {
+    "name": "Usain Bolt",
+    "date": "08/09/2012",
+    "score": "19.32",
+    "link": "https://www.youtube.com/watch?v=LWZQAVtkMBo",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565_%28cropped%29.jpg/235px-Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565_%28cropped%29.jpg"
+  },
+  "10000m,2004": {
+    "name": "Kenenisa Bekele",
+    "date": "08/06/2004",
+    "score": "26:20.31",
+    "link": "",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Kenenisabekele1.jpg/190px-Kenenisabekele1.jpg"
+  },
+  "1500freestyle,1976": {
+    "name": "Brian Goodell",
+    "date": "07/20/1976",
+    "score": "15:02.40",
+    "link": "https://www.youtube.com/watch?v=PFjpMUp6A14",
+    "image": ""
+  },
+  "800m,1997": {
+    "name": "Wilson Kipketer",
+    "date": "08/24/1997",
+    "score": "1:41.11",
+    "link": "https://www.youtube.com/watch?v=y-nktw7gZgU",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Wilson_Kipketer_%282010%29.jpg/240px-Wilson_Kipketer_%282010%29.jpg"
   }
 }
 
