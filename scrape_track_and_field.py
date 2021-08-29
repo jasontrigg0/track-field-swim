@@ -93,94 +93,9 @@ def download_world_athletics_year(year, event):
         times += row_times
     return times
 
-def scrape_older_years():
-    #pull these from
-    pass
-
-def get_alltime_url(event):
-    return {
-        "100m": f"http://www.alltime-athletics.com/m_100ok.htm",
-        "200m": f"http://www.alltime-athletics.com/m_200ok.htm",
-        "400m": f"http://www.alltime-athletics.com/m_400ok.htm",
-        "800m": f"http://www.alltime-athletics.com/m_800ok.htm",
-        "1500m": f"http://www.alltime-athletics.com/m_1500ok.htm",
-        "5000m": f"http://www.alltime-athletics.com/m_5000ok.htm",
-        "10000m": f"http://www.alltime-athletics.com/m_10kok.htm",
-        "marathon": f"http://www.alltime-athletics.com/mmaraok.htm",
-        "110mh": f"http://www.alltime-athletics.com/m_110hok.htm",
-        "400mh": f"http://www.alltime-athletics.com/m_400hok.htm",
-        "3000mSC": f"http://www.alltime-athletics.com/m3000hok.htm",
-        "high_jump": f"http://www.alltime-athletics.com/mhighok.htm",
-        "pole_vault": f"http://www.alltime-athletics.com/mpoleok.htm",
-        "long_jump": f"http://www.alltime-athletics.com/mlongok.htm",
-        "triple_jump": f"http://www.alltime-athletics.com/mtripok.htm",
-        "shot_put": f"http://www.alltime-athletics.com/mshotok.htm",
-        "discus": f"http://www.alltime-athletics.com/mdiscok.htm",
-        "hammer": f"http://www.alltime-athletics.com/mhammok.htm",
-        "javelin": f"http://www.alltime-athletics.com/mjaveok.htm",
-        "decathlon": f"http://www.alltime-athletics.com/mdecaok.htm"
-    }[event]
-
-def download_alltime_athletics(event):
-    url = get_alltime_url(event)
-    r = requests.get(url)
-    soup = BeautifulSoup(r.text,"lxml")
-    lines = soup.select("pre")[0].text.split("\n")
-    lines = [l.strip().split("  ") for l in lines if l.strip()]
-    lines = [[x.strip() for x in l if x] for l in lines]
-    if event in ["long_jump","triple_jump"]:
-        #some rows are missing the 7th field -- add a placeholder
-        lines = [l[:6] + [""] + l[6:] if len(l) == 8 else l for l in lines]
-    lines = [l for l in lines if not "a" in l[1]] #Boston Marathon times labelled with "a" and think aren't usually counted
-    scores = [{"score": EVENT_TO_SIGN[event] * parse_time(l[1]), "name": l[-6], "year": int(l[-1].split(".")[-1])} for l in lines]
-    #one score per person per year:
-    deduped_scores = []
-    year_to_scores = {}
-    name_year = set()
-    for s in scores:
-        key = (s["name"],s["year"])
-        if s["year"] == 2015: #"Henderson" in s["name"]:
-            print(key, s)
-        if key in name_year:
-            continue
-        name_year.add(key)
-        year_to_scores.setdefault(s["year"],[]).append(s["score"])
-    return year_to_scores
-
-def download_event(event):
-    year_to_values = download_world_athletics(event)
-    # year_to_values2 = download_alltime_athletics(event)
-
-    # all_years = list(set(list(year_to_values1.keys()) + list(year_to_values2.keys())))
-    # year_to_values = {}
-    # for year in all_years:
-    #     if year in year_to_values1 and year in year_to_values2:
-    #         num_to_compare = min(5,len(year_to_values1[year]), len(year_to_values2[year]))
-    #         if year_to_values1[year][:num_to_compare] != year_to_values2[year][:num_to_compare]:
-    #             if (event,year) in [("400m",2009),("800m",2021),("1500m",2017),("110mh",2020),("3000mSC",2003),("high_jump",2001),("pole_vault",2004),("pole_vault",2009),("pole_vault",2010),("pole_vault",2011),("pole_vault",2012),("pole_vault",2021),("triple_jump",2011),("discus",2009),("hammer",2012),("hammer",2013),("hammer",2016),("hammer",2019),("javelin",2020),("decathlon",2015),("decathlon",2020)]:
-    #                 continue #manually verified
-    #             print("ERROR: mismatch between sources - ", event, year, year_to_values1[year], year_to_values2[year])
-    #             raise
-    #     if len(year_to_values1.get(year,[])) > len(year_to_values2.get(year,[])):
-    #         year_to_values[year] = year_to_values1.get(year,[])
-    #     else:
-    #         year_to_values[year] = year_to_values2.get(year,[])
-    open(f"/tmp/records_{event}.json","w").write(json.dumps(year_to_values))
-
-
-
-
 if __name__ == "__main__":
-    # year_to_values = {}
-    # for event in EVENT_TO_SIGN:
-    #     print(event)
-    #     for year in range(2001, 2022): #including current year although incomplete
-    #         year_to_values[year] = download_year(year, event)
-
-    #     open(f"/tmp/records_{event}.json","w").write(json.dumps(year_to_values))
     for event in EVENT_TO_SIGN:
         print(event)
-        #if event != "long_jump": continue
-        #if event in ["100m","200m","400m","800m","1500m","5000m","10000m","marathon","110mh","400mh","3000mSC","high_jump","pole_vault","long_jump","triple_jump","shot_put","discus","hammer"]: continue #,"javelin"]: continue
         year_to_values = download_world_athletics(event)
         open(f"/tmp/records_{event}.json","w").write(json.dumps(year_to_values))
+        raise
