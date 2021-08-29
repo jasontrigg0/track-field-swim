@@ -25,7 +25,7 @@ def parse_time(time):
 
 def download_event(event):
     distance, stroke = event
-    years = [x for x in range(1980,2022) if x not in [2008,2009]] #skipping 2008-2009 because of swimsuit issues
+    years = [x for x in range(1970,2022)]
     year_to_best_times = {}
     for year in years:
         url = f"https://api.fina.org/fina/rankings/swimming?gender=M&distance={distance}&stroke={stroke.upper()}&poolConfiguration=LCM&year={year}&startDate=&endDate=&timesMode=BEST_TIMES&regionId=&countryId=&pageSize=200"
