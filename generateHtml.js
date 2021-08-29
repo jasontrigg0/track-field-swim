@@ -209,7 +209,7 @@ async function main() {
       label: "T&F",
       icon: "calendar_today",
       title: "Top Track, Field, and Swimming Performances",
-      detail: `Performances measured by how improbable they were at the time. A score of 50 represents the best time in the world on an average year, while a score of 99 is a once in a century event. The right column shows the current world records in each event sorted by the performance needed to break them.`,
+      detail: `Performances measured by how improbable they were at the time. A score of 50+ comes once every year or two, while a score over 99 is a once in a century event. The right column shows the current world records in each event sorted by the performance needed to break them.`,
       active: true
     },
   ];
