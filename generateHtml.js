@@ -50,13 +50,13 @@ function generateHtml(tabInfo, cardInfo) {
   let cardHtml = '';
   for (let tab of tabInfo) {
     //tab-panel
-    cardHtml += `<div style="margin-top: 25px; flex-direction: column; justify-content: space-around" class="tab-panel ${tab["active"] ? "active" : ""}">`;
+    cardHtml += `<div style="margin-top: 25px; flex-direction: column; justify-content: space-around; align-items: center" class="tab-panel ${tab["active"] ? "active" : ""}">`;
     //header
-    cardHtml += `<div><h2 style="padding-top: 10px; text-align: center">${tab["title"]}</h2><div style="text-align: center; padding-bottom: 20px;">${tab["detail"]}</div></div>\n`;
+    cardHtml += `<div><h2 style="padding-top: 10px; text-align: center">${tab["title"]}</h2><div style="text-align: center; padding-bottom: 20px; max-width: 1000px">${tab["detail"]}</div></div>\n`;
     //cards
-    cardHtml += `<div style="display: flex; margin-top: 25px; flex-direction: row; justify-content: space-around">`;
+    cardHtml += `<div style="display: flex; margin-top: 25px; flex-direction: row; justify-content: space-around; min-width: 1200px;">`;
 
-    cardHtml += generateCards("All-Time",cardInfo["alltime"]);
+    cardHtml += generateCards("All-Time Performances",cardInfo["alltime"]);
     cardHtml += generateCards("Hardest WRs to break today",cardInfo["live"]);
     cardHtml += '</div>';
     cardHtml += '</div>';
