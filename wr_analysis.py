@@ -3,6 +3,7 @@ import scipy.stats
 import scipy.optimize as opt
 import sklearn.linear_model
 import sklearn.metrics
+import sklearn.pipeline
 import pandas as pd
 import json
 import math
@@ -142,12 +143,30 @@ def get_normalized_scores(event, min_cnt=1):
 
     return year_to_scores
 
+class Lasso():
+    def __init__(self):
+        self.mdl = sklearn.pipeline.Pipeline([
+            ('scaler', sklearn.preprocessing.StandardScaler()),
+            ('lasso', sklearn.linear_model.LassoCV())
+        ])
+    def coeffs(self):
+        normed_coeffs = self.mdl.named_steps["lasso"].coef_
+        normed_intercept = self.mdl.named_steps["lasso"].intercept_
+        means = list(self.mdl.named_steps["scaler"].mean_)
+        sds = list(self.mdl.named_steps["scaler"].scale_)
+        raw_coeffs = [coef / sd for (coef,sd,mean) in zip(normed_coeffs, sds, means)]
+        raw_intercept = normed_intercept - sum([coef * mean for (coef,mean) in zip(raw_coeffs, means)])
+        return raw_coeffs, raw_intercept
+    def fit(self, X, y):
+        return self.mdl.fit(X,y)
+    def predict(self, X):
+        return self.mdl.predict(X)
+
 def regress(df, regressors, target):
-    reg = sklearn.linear_model.LassoCV(normalize=True)
+    reg = Lasso()
     reg.fit(df[regressors], df[target])
     predictions = reg.predict(df[regressors])
-    print(reg.coef_)
-    print(reg.intercept_)
+    print(reg.coeffs())
     print(sklearn.metrics.mean_squared_error(df[target],predictions))
     print(sklearn.metrics.r2_score(df[target],predictions))
 
@@ -231,7 +250,7 @@ def regress_event_yearly_best(event):
         linreg_pred = reg.predict([[y]])[0]
 
         #lasso
-        reg = sklearn.linear_model.LassoCV(normalize=True)
+        reg = Lasso() #sklearn.linear_model.LassoCV(normalize=True)
         reg.fit(df_regress[["year"]], df_regress["x1"])
         # print(reg.coef_)
         # print(reg.intercept_)
@@ -281,16 +300,16 @@ def find_best_fit():
 def predict_deviations():
     df, _, _ = compute_deviations()
     print(df)
-    reg = sklearn.linear_model.LassoCV(normalize=True)
+    reg = Lasso() #sklearn.linear_model.LassoCV(normalize=True)
     #df["abs_norm_err"] = abs(df["norm_err"])
     df["yr_sq"] = df["year"] * df["year"]
     regressors = ["exp_yr","exp_yr_sd","edge_sd","2020_sd"]
     pred_var = "abs_err"
     reg.fit(df[regressors], df[pred_var])
+    df[regressors + [pred_var]].to_csv("/tmp/reg.csv",index=False)
     print(df[regressors])
     df["reg"] = reg.predict(df[regressors])
-    print(reg.coef_)
-    print(reg.intercept_)
+    print(reg.coeffs())
     print(sklearn.metrics.mean_squared_error(df[pred_var],df["reg"]))
     print(sklearn.metrics.r2_score(df[pred_var],df["reg"]))
 
