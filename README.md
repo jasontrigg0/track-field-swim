@@ -1,1 +1,2 @@
 # track-field-swim
+NOTE: as of 2021-09-25 swimming record scraper is broken because FINA rankings don't properly filter for 25m vs 50m pools. This shows up on their website as well, so presumably they'll fix it? Try again in a few months I suppose.
