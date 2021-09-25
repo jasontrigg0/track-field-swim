@@ -98,4 +98,3 @@ if __name__ == "__main__":
         print(event)
         year_to_values = download_world_athletics(event)
         open(f"/tmp/records_{event}.json","w").write(json.dumps(year_to_values))
-        raise
