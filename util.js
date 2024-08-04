@@ -18,7 +18,7 @@ async function readCsv(infile = undefined) {
 
     //https://csv.js.org/parse/api/
     // Create the parser
-    const parser = parse({
+    const parser = parse.parse({
       columns:true
     });
     // Use the readable stream api

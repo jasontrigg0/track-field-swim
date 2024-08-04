@@ -25,10 +25,11 @@ def parse_time(time):
 
 def download_event(event):
     distance, stroke = event
-    years = [x for x in range(1970,2022)]
+    years = [x for x in range(1970,2025)]
     year_to_best_times = {}
     for year in years:
-        url = f"https://api.fina.org/fina/rankings/swimming?gender=M&distance={distance}&stroke={stroke.upper()}&poolConfiguration=LCM&year={year}&startDate=&endDate=&timesMode=BEST_TIMES&regionId=&countryId=&pageSize=200"
+        print(year)
+        url = f"https://api.worldaquatics.com/fina/rankings/swimming?gender=M&distance={distance}&stroke={stroke.upper()}&poolConfiguration=LCM&year={year}&startDate=&endDate=&timesMode=BEST_TIMES&regionId=&countryId=&pageSize=200"
         r = requests.get(url)
         data_dict = json.loads(r.text)
         best_times = [-1 * parse_time(x["time"]) for x in data_dict["swimmingWorldRankings"]]

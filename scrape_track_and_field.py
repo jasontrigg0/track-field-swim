@@ -55,14 +55,14 @@ def get_world_url(event, year, page):
         "100m": f"{root}/sprints/100-metres/outdoor/men/senior?{params}&timing=electronic&windReading=regular",
         "200m": f"{root}/sprints/200-metres/outdoor/men/senior?{params}&timing=electronic&windReading=regular",
         "400m": f"{root}/sprints/400-metres/outdoor/men/senior?{params}&timing=electronic",
-        "800m": f"{root}/middle-long/800-metres/outdoor/men/senior?{params}&timing=electronic",
-        "1500m": f"{root}/middle-long/1500-metres/outdoor/men/senior?{params}",
-        "5000m": f"{root}/middle-long/5000-metres/outdoor/men/senior?{params}",
-        "10000m": f"{root}/middle-long/10000-metres/outdoor/men/senior?{params}",
+        "800m": f"{root}/middlelong/800-metres/outdoor/men/senior?{params}&timing=electronic",
+        "1500m": f"{root}/middlelong/1500-metres/outdoor/men/senior?{params}",
+        "5000m": f"{root}/middlelong/5000-metres/outdoor/men/senior?{params}",
+        "10000m": f"{root}/middlelong/10000-metres/outdoor/men/senior?{params}",
         "marathon": f"{root}/road-running/marathon/outdoor/men/senior?{params}&drop=regular&fiftyPercentRule=regular",
         "110mh": f"{root}/hurdles/110-metres-hurdles/outdoor/men/senior?{params}&timing=electronic&windReading=regular",
         "400mh": f"{root}/hurdles/400-metres-hurdles/outdoor/men/senior?{params}&timing=electronic",
-        "3000mSC": f"{root}/middle-long/3000-metres-steeplechase/outdoor/men/senior?{params}",
+        "3000mSC": f"{root}/middlelong/3000-metres-steeplechase/outdoor/men/senior?{params}",
         "high_jump": f"{root}/jumps/high-jump/outdoor/men/senior?{params}",
         "pole_vault": f"{root}/jumps/pole-vault/outdoor/men/senior?{params}",
         "long_jump": f"{root}/jumps/long-jump/outdoor/men/senior?{params}&windReading=regular",
@@ -76,7 +76,7 @@ def get_world_url(event, year, page):
 
 def download_world_athletics(event):
     year_to_values = {}
-    for year in range(1960, 2022):
+    for year in range(1960, 2025):
         print(year)
         year_to_values[year] = download_world_athletics_year(year, event)
     return year_to_values

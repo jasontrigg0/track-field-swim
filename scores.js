@@ -262,7 +262,7 @@ const scoreInfo = {
     "name": "Ian Thorpe",
     "date": "07/30/2002",
     "score": "3:40.08",
-    "link": "",
+    "link": "https://www.youtube.com/watch?v=5_FwRjBC8Io",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Ian_Thorpe_2012.jpg/200px-Ian_Thorpe_2012.jpg"
   },
   "5000m,2004": {
@@ -296,7 +296,7 @@ const scoreInfo = {
   "200m,2008": {
     "name": "Usain Bolt",
     "date": "08/20/2008",
-    "score": "9.30",
+    "score": "19.30",
     "link": "https://www.youtube.com/watch?v=QUpC71WbAhA",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565_%28cropped%29.jpg/235px-Bolt_se_aposenta_com_medalha_de_ouro_no_4_x_100_metros_1039118-19.08.2016_frz-9565_%28cropped%29.jpg"
   },
@@ -509,7 +509,105 @@ const scoreInfo = {
     "score": "1:41.11",
     "link": "https://www.youtube.com/watch?v=y-nktw7gZgU",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Wilson_Kipketer_%282010%29.jpg/240px-Wilson_Kipketer_%282010%29.jpg"
-  }
+  },
+  "shot_put,2023": {
+    "name": "Ryan Crouser",
+    "date": "05/27/2023",
+    "score": "23.56m",
+    "link":"https://www.youtube.com/watch?v=YT7RaoWlHho",
+    "image":"https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Ryan_Crouser_Rio_2016.jpg/240px-Ryan_Crouser_Rio_2016.jpg"
+  },
+  "200butterfly,2022": {
+    "name": "Kristóf Milák",
+    "date": "06/21/2022",
+    "score": "1:50.34",
+    "link": "https://www.youtube.com/watch?v=K2eSAFmdSHQ",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/2018-10-07_Swimming_Boys%27_400_m_Freestyle_Final_at_2018_Summer_Youth_Olympics_%28Martin_Rulsch%29_45.jpg/240px-2018-10-07_Swimming_Boys%27_400_m_Freestyle_Final_at_2018_Summer_Youth_Olympics_%28Martin_Rulsch%29_45.jpg"
+  },
+  "100breaststroke,2018": {
+    "name": "Adam Peaty",
+    "date": "08/04/2018",
+    "score": "57.10",
+    "link": "https://www.youtube.com/watch?v=ghAUx37qipk",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Adam_Peaty_Rio_2016.jpg/240px-Adam_Peaty_Rio_2016.jpg",
+  },
+  "400mh,2022": {
+    "name": "Alison Dos Santos",
+    "date": "07/19/2022",
+    "score": "46.29",
+    "link": "https://www.youtube.com/watch?v=_E5q01Vr7lQ",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Alison_Dos_Santos_2022.jpg/225px-Alison_Dos_Santos_2022.jpg"
+  },
+  "discus,2024": {
+    "name": "Mykolas Alekna",
+    "date": "04/14/2024",
+    "score": "74.35m",
+    "link": "https://www.youtube.com/watch?v=sanIjTMY214",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/2022-08-19_European_Championships_2022_%E2%80%93_Men%27s_Discus_Throw_by_Sandro_Halank%E2%80%93009.jpg/254px-2022-08-19_European_Championships_2022_%E2%80%93_Men%27s_Discus_Throw_by_Sandro_Halank%E2%80%93009.jpg"
+  },
+  "pole_vault,2024": {
+    "name": "Armand Duplantis",
+    "date": "04/20/2024",
+    "score": "6.24m",
+    "link": "https://www.youtube.com/watch?v=rbSBKwd0TN4",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Armand_Duplantis_after_his_6.0_m_jump-1.jpg/240px-Armand_Duplantis_after_his_6.0_m_jump-1.jpg"
+  },
+  "3000mSC,2023": {
+    "name": "Lamecha Girma",
+    "date": "06/09/2023",
+    "score": "7:52.11",
+    "link": "https://www.youtube.com/watch?v=yIx_8zgtImU",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/11/DOH80097_3000mSt_men_final_%2848910430618%29_%28cropped%29.jpg/133px-DOH80097_3000mSt_men_final_%2848910430618%29_%28cropped%29.jpg"
+  },
+  "marathon,2023": {
+    "name": "Kelvin Kiptum",
+    "date": "10/08/2023",
+    "score": "2:00:35",
+    "link": "https://www.youtube.com/watch?v=oC3_2RTzb0Q",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d0/Kelvin_Kiptum_%28KEN%29_2023.jpg/226px-Kelvin_Kiptum_%28KEN%29_2023.jpg"
+  },
+  "400medley,2023": {
+    "name": "Leon Marchand",
+    "date": "07/23/2023",
+    "score": "4:02.50",
+    "link": "https://www.youtube.com/watch?v=SxXzRQUfbKM",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/L%C3%A9on_Marchand%2C_2023_Pac-12_Championships%2C_400_yard_individual_medley_preliminaries_-_3_March_2023.jpg/180px-L%C3%A9on_Marchand%2C_2023_Pac-12_Championships%2C_400_yard_individual_medley_preliminaries_-_3_March_2023.jpg"
+  },
+  "200freestyle,2022": {
+    "name": "David Popovici",
+    "date": "08/15/2022",
+    "score": "1:42.97",
+    "link": "https://www.youtube.com/watch?v=JWFF6ZVdoxc",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/RKZ_2841x_%281%29.jpg/160px-RKZ_2841x_%281%29.jpg"
+  },
+  "100freestyle,2024": {
+    "name": "Pan Zhanle",
+    "date": "07/31/2024",
+    "score": "46.40",
+    "link": "https://www.youtube.com/watch?v=N60Le7TFgMI",
+    "image": ""
+  },
+  "200breaststroke,2023": {
+    "name": "Qin Haiyang",
+    "date": "07/28/2023",
+    "score": "2:05.48",
+    "link": "https://www.youtube.com/watch?v=-3mYrnBZFKg",
+    "image": ""
+  },
+  "800freestyle,2023": {
+    "name": "Ahmed Hafnaoui",
+    "date": "07/26/2023",
+    "score": "7:37.00",
+    "link": "https://www.youtube.com/watch?v=cw6bKDqLL_Q",
+    "image": ""
+  },
+  "100backstroke,2022": {
+    "name": "Thomas Ceccon",
+    "date": "06/20/2022",
+    "score": "51.60",
+    "link": "https://www.youtube.com/watch?v=dG0oJHqX3UM",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/2018-10-10_Swimming_Boys%27_50m_Freestyle_Final_at_2018_Summer_Youth_Olympics_by_Sandro_Halank%E2%80%93016_%28cropped%29.jpg/179px-2018-10-10_Swimming_Boys%27_50m_Freestyle_Final_at_2018_Summer_Youth_Olympics_by_Sandro_Halank%E2%80%93016_%28cropped%29.jpg"
+  },
 }
 
 exports.scoreInfo = scoreInfo;

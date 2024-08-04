@@ -8,7 +8,7 @@ import pandas as pd
 import json
 import math
 
-MAX_YEAR = 2021
+MAX_YEAR = 2024
 
 EVENT_TO_SIGN = {
     "100m": -1,
@@ -128,6 +128,7 @@ def get_all_events():
     return list(EVENT_TO_SIGN.keys()) + SWIMMING_EVENTS
 
 def get_normalized_scores(event, min_cnt=1):
+    print(event)
     year_to_scores = json.load(open(f'/tmp/records_{event}.json'))
     year_to_scores = {int(k):v for k,v in year_to_scores.items() if len(v) >= min_cnt}
 
@@ -181,7 +182,7 @@ def project_yearly_best():
                 df = df.append(proj, ignore_index=True)
     regressors = ["trend_1", "gap_diff", "fit_curr", "swim", "field"]
     target = "x1_fut"
-    print(df)
+    df.to_csv("/tmp/projections.csv", index=False)
     regress(df, regressors, target)
 
 def project_event_yearly_best(event, curr_year, horizon):
@@ -424,6 +425,7 @@ def years_to_wr():
             )
             z_score = (record - pred) / predicted_sd_err
             survival_prob = scipy.stats.norm.cdf(z_score)
+            print(event, pred, record, survival_prob)
             prob *= survival_prob
             if prob < 0.5:
                 event_info[event]["next_wr_year"] = yr
