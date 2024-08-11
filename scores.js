@@ -547,9 +547,9 @@ const scoreInfo = {
   },
   "pole_vault,2024": {
     "name": "Armand Duplantis",
-    "date": "04/20/2024",
-    "score": "6.24m",
-    "link": "https://www.youtube.com/watch?v=rbSBKwd0TN4",
+    "date": "08/05/2024",
+    "score": "6.25m",
+    "link": "https://www.youtube.com/watch?v=p_f54eJOhd4",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Armand_Duplantis_after_his_6.0_m_jump-1.jpg/240px-Armand_Duplantis_after_his_6.0_m_jump-1.jpg"
   },
   "3000mSC,2023": {
@@ -607,6 +607,13 @@ const scoreInfo = {
     "score": "51.60",
     "link": "https://www.youtube.com/watch?v=dG0oJHqX3UM",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/2018-10-10_Swimming_Boys%27_50m_Freestyle_Final_at_2018_Summer_Youth_Olympics_by_Sandro_Halank%E2%80%93016_%28cropped%29.jpg/179px-2018-10-10_Swimming_Boys%27_50m_Freestyle_Final_at_2018_Summer_Youth_Olympics_by_Sandro_Halank%E2%80%93016_%28cropped%29.jpg"
+  },
+  "1500freestyle,2024": {
+    "name": "Bobby Finke",
+    "date": "08/04/2024",
+    "score": "14:30.67",
+    "link": "https://www.youtube.com/watch?v=2-3g4Jrncq8",
+    "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Josh_and_Bobby_at_FAU_vs_UF_Swim_Meet_2018.jpg/172px-Josh_and_Bobby_at_FAU_vs_UF_Swim_Meet_2018.jpg"
   },
 }
 
