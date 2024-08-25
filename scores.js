@@ -79,7 +79,7 @@ const scoreInfo = {
   "800m,2012": {
     "name": "David Rudisha",
     "date": "08/09/2012",
-    "score": "1.40.91",
+    "score": "1:40.91",
     "link": "https://www.youtube.com/watch?v=YKEOjWEzVGs",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/be/David_Rudisha_Beijing_2015.jpg/230px-David_Rudisha_Beijing_2015.jpg"
   },
@@ -548,7 +548,7 @@ const scoreInfo = {
   "pole_vault,2024": {
     "name": "Armand Duplantis",
     "date": "08/05/2024",
-    "score": "6.25m",
+    "score": "6.26m",
     "link": "https://www.youtube.com/watch?v=p_f54eJOhd4",
     "image": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Armand_Duplantis_after_his_6.0_m_jump-1.jpg/240px-Armand_Duplantis_after_his_6.0_m_jump-1.jpg"
   },
